@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-26T14:27:07.645975" rpa="false" schemaversion="5">
+<suite id="s1" name="Scenario1 Test" source="C:\Users\noompkbn9\Documents\PKBN\Projects\rbf-juice_shop\tests\scenario1_test.robot">
+<test id="s1-t1" name="User Should Be Able To Login Add One Item And Complete Checkout" line="14">
+<kw name="Setup Test" type="SETUP">
+<kw name="Load Environment Variables" owner="env_loader">
+<kw name="Get Environment Variable Or Default" owner="env_loader">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Environment Variable Should Be Set" owner="OperatingSystem">
+<msg time="2025-05-26T14:27:07.858907" level="FAIL">Environment variable 'JUICE_SHOP_URL' is not set.</msg>
+<arg>${env_var}</arg>
+<doc>Fails if the specified environment variable is not set.</doc>
+<status status="FAIL" start="2025-05-26T14:27:07.858783" elapsed="0.000222">Environment variable 'JUICE_SHOP_URL' is not set.</status>
+</kw>
+<msg time="2025-05-26T14:27:07.859084" level="INFO">${value} = False</msg>
+<var>${value}</var>
+<arg>Environment Variable Should Be Set</arg>
+<arg>${env_var}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.858679" elapsed="0.000422"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${default_value}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.859301" elapsed="0.000079"/>
+</kw>
+<msg time="2025-05-26T14:27:07.859429" level="INFO">${result} = https://juice-shop.herokuapp.com</msg>
+<var>${result}</var>
+<arg>${value}</arg>
+<arg>Get Environment Variable</arg>
+<arg>${env_var}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${default_value}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.859179" elapsed="0.000265"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-05-26T14:27:07.859481" elapsed="0.000032"/>
+</return>
+<msg time="2025-05-26T14:27:07.859588" level="INFO">${BASE_URL} = https://juice-shop.herokuapp.com</msg>
+<var>${BASE_URL}</var>
+<arg>JUICE_SHOP_URL</arg>
+<arg>${BASE_URL}</arg>
+<status status="PASS" start="2025-05-26T14:27:07.858285" elapsed="0.001317"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-26T14:27:07.859765" level="INFO">${BASE_URL} = https://juice-shop.herokuapp.com</msg>
+<arg>${BASE_URL}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.859664" elapsed="0.000124"/>
+</kw>
+<kw name="Get Environment Variable Or Default" owner="env_loader">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Environment Variable Should Be Set" owner="OperatingSystem">
+<msg time="2025-05-26T14:27:07.860167" level="FAIL">Environment variable 'JUICE_SHOP_EMAIL' is not set.</msg>
+<arg>${env_var}</arg>
+<doc>Fails if the specified environment variable is not set.</doc>
+<status status="FAIL" start="2025-05-26T14:27:07.860075" elapsed="0.000137">Environment variable 'JUICE_SHOP_EMAIL' is not set.</status>
+</kw>
+<msg time="2025-05-26T14:27:07.860263" level="INFO">${value} = False</msg>
+<var>${value}</var>
+<arg>Environment Variable Should Be Set</arg>
+<arg>${env_var}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.860002" elapsed="0.000275"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${default_value}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.860432" elapsed="0.000070"/>
+</kw>
+<msg time="2025-05-26T14:27:07.860543" level="INFO">${result} = noom_pkbn@hotmail.com</msg>
+<var>${result}</var>
+<arg>${value}</arg>
+<arg>Get Environment Variable</arg>
+<arg>${env_var}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${default_value}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.860340" elapsed="0.000216"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-05-26T14:27:07.860590" elapsed="0.000023"/>
+</return>
+<msg time="2025-05-26T14:27:07.860677" level="INFO">${DEFAULT_EMAIL} = noom_pkbn@hotmail.com</msg>
+<var>${DEFAULT_EMAIL}</var>
+<arg>JUICE_SHOP_EMAIL</arg>
+<arg>${DEFAULT_EMAIL}</arg>
+<status status="PASS" start="2025-05-26T14:27:07.859868" elapsed="0.000822"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-26T14:27:07.860847" level="INFO">${DEFAULT_EMAIL} = noom_pkbn@hotmail.com</msg>
+<arg>${DEFAULT_EMAIL}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.860750" elapsed="0.000118"/>
+</kw>
+<kw name="Get Environment Variable Or Default" owner="env_loader">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Environment Variable Should Be Set" owner="OperatingSystem">
+<msg time="2025-05-26T14:27:07.861240" level="FAIL">Environment variable 'JUICE_SHOP_PASSWORD' is not set.</msg>
+<arg>${env_var}</arg>
+<doc>Fails if the specified environment variable is not set.</doc>
+<status status="FAIL" start="2025-05-26T14:27:07.861153" elapsed="0.000121">Environment variable 'JUICE_SHOP_PASSWORD' is not set.</status>
+</kw>
+<msg time="2025-05-26T14:27:07.861327" level="INFO">${value} = False</msg>
+<var>${value}</var>
+<arg>Environment Variable Should Be Set</arg>
+<arg>${env_var}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.861085" elapsed="0.000255"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${default_value}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.861496" elapsed="0.000059"/>
+</kw>
+<msg time="2025-05-26T14:27:07.861599" level="INFO">${result} = Test123!</msg>
+<var>${result}</var>
+<arg>${value}</arg>
+<arg>Get Environment Variable</arg>
+<arg>${env_var}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${default_value}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.861406" elapsed="0.000206"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-05-26T14:27:07.861644" elapsed="0.000017"/>
+</return>
+<msg time="2025-05-26T14:27:07.861718" level="INFO">${DEFAULT_PASSWORD} = Test123!</msg>
+<var>${DEFAULT_PASSWORD}</var>
+<arg>JUICE_SHOP_PASSWORD</arg>
+<arg>${DEFAULT_PASSWORD}</arg>
+<status status="PASS" start="2025-05-26T14:27:07.860947" elapsed="0.000784"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-26T14:27:07.861867" level="INFO">${DEFAULT_PASSWORD} = Test123!</msg>
+<arg>${DEFAULT_PASSWORD}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.861787" elapsed="0.000100"/>
+</kw>
+<kw name="Get Environment Variable Or Default" owner="env_loader">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Environment Variable Should Be Set" owner="OperatingSystem">
+<msg time="2025-05-26T14:27:07.862243" level="FAIL">Environment variable 'BROWSER' is not set.</msg>
+<arg>${env_var}</arg>
+<doc>Fails if the specified environment variable is not set.</doc>
+<status status="FAIL" start="2025-05-26T14:27:07.862162" elapsed="0.000113">Environment variable 'BROWSER' is not set.</status>
+</kw>
+<msg time="2025-05-26T14:27:07.862322" level="INFO">${value} = False</msg>
+<var>${value}</var>
+<arg>Environment Variable Should Be Set</arg>
+<arg>${env_var}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.862095" elapsed="0.000247"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${default_value}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.862572" elapsed="0.000098"/>
+</kw>
+<msg time="2025-05-26T14:27:07.862715" level="INFO">${result} = chrome</msg>
+<var>${result}</var>
+<arg>${value}</arg>
+<arg>Get Environment Variable</arg>
+<arg>${env_var}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${default_value}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.862482" elapsed="0.000246"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-05-26T14:27:07.862760" elapsed="0.000019"/>
+</return>
+<msg time="2025-05-26T14:27:07.862845" level="INFO">${BROWSER} = chrome</msg>
+<var>${BROWSER}</var>
+<arg>BROWSER</arg>
+<arg>${BROWSER}</arg>
+<status status="PASS" start="2025-05-26T14:27:07.861969" elapsed="0.000889"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-26T14:27:07.862996" level="INFO">${BROWSER} = chrome</msg>
+<arg>${BROWSER}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.862918" elapsed="0.000099"/>
+</kw>
+<kw name="Get Environment Variable Or Default" owner="env_loader">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Environment Variable Should Be Set" owner="OperatingSystem">
+<msg time="2025-05-26T14:27:07.863403" level="FAIL">Environment variable 'TIMEOUT' is not set.</msg>
+<arg>${env_var}</arg>
+<doc>Fails if the specified environment variable is not set.</doc>
+<status status="FAIL" start="2025-05-26T14:27:07.863321" elapsed="0.000116">Environment variable 'TIMEOUT' is not set.</status>
+</kw>
+<msg time="2025-05-26T14:27:07.863481" level="INFO">${value} = False</msg>
+<var>${value}</var>
+<arg>Environment Variable Should Be Set</arg>
+<arg>${env_var}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.863240" elapsed="0.000253"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${default_value}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.863643" elapsed="0.000055"/>
+</kw>
+<msg time="2025-05-26T14:27:07.863737" level="INFO">${result} = 10</msg>
+<var>${result}</var>
+<arg>${value}</arg>
+<arg>Get Environment Variable</arg>
+<arg>${env_var}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${default_value}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.863552" elapsed="0.000198"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-05-26T14:27:07.863780" elapsed="0.000017"/>
+</return>
+<msg time="2025-05-26T14:27:07.863851" level="INFO">${TIMEOUT} = 10</msg>
+<var>${TIMEOUT}</var>
+<arg>TIMEOUT</arg>
+<arg>${TIMEOUT}</arg>
+<status status="PASS" start="2025-05-26T14:27:07.863093" elapsed="0.000771"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-05-26T14:27:07.863996" level="INFO">${TIMEOUT} = 10</msg>
+<arg>${TIMEOUT}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.863917" elapsed="0.000099"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Using URL: ${BASE_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.864065" elapsed="0.000195"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Using Browser: ${BROWSER}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.864358" elapsed="0.000147"/>
+</kw>
+<status status="PASS" start="2025-05-26T14:27:07.858108" elapsed="0.006454"/>
+</kw>
+<kw name="Navigate To Login Page" owner="login_page">
+<kw name="Open Browser To Page" owner="base_page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-26T14:27:07.865042" level="INFO">Opening browser 'chrome' to base url 'https://juice-shop.herokuapp.com'.</msg>
+<msg time="2025-05-26T14:27:08.002684" level="WARN">The chromedriver version (136.0.7103.92) detected in PATH at C:\Program Files\Python313\chromedriver.exe might not be compatible with the detected chrome version (137.0.7151.41); currently, chromedriver 137.0.7151.40 is recommended for chrome 137.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-26T14:27:07.864924" elapsed="5.443048"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-26T14:27:13.308116" elapsed="0.025367"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-05-26T14:27:13.333631" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2025-05-26T14:27:07.864781" elapsed="5.469918"/>
+</kw>
+<kw name="Dismiss Cookie Notice If Present" owner="login_page">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-26T14:27:13.356661" level="INFO">Element 'css=.close-dialog' is displayed.</msg>
+<arg>${DISMISS_COOKIE_NOTICE}</arg>
+<arg>5s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-26T14:27:13.335120" elapsed="0.021624"/>
+</kw>
+<msg time="2025-05-26T14:27:13.356845" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${DISMISS_COOKIE_NOTICE}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-26T14:27:13.335018" elapsed="0.021845"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-26T14:27:13.357275" level="INFO">Clicking element 'css=.close-dialog'.</msg>
+<arg>${DISMISS_COOKIE_NOTICE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-26T14:27:13.357144" elapsed="0.077820"/>
+</kw>
+<arg>${status}</arg>
+<arg>Click Element</arg>
+<arg>${DISMISS_COOKIE_NOTICE}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-26T14:27:13.356981" elapsed="0.078073"/>
+</kw>
+<status status="PASS" start="2025-05-26T14:27:13.334831" elapsed="0.100282"/>
+</kw>
+<status status="PASS" start="2025-05-26T14:27:07.864639" elapsed="5.570511"/>
+</kw>
+<status status="PASS" start="2025-05-26T14:27:07.857835" elapsed="5.577348"/>
+</kw>
+<kw name="Login With Credentials" owner="login_page">
+<kw name="Input Text When Ready" owner="base_page">
+<kw name="Wait Until Element Is Visible And Enabled" owner="base_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-05-26T14:27:16.401192" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x00007FF65F4ECF25+75717]
+	GetHandleVerifier [0x00007FF65F4ECF80+75808]
+	(No symbol) [0x00007FF65F2B8DCC]
+	(No symbol) [0x00007FF65F2FF54F]
+	(No symbol) [0x00007FF65F337242]
+	(No symbol) [0x00007FF65F331C63]
+	(No symbol) [0x00007FF65F330D29]
+	(No symbol) [0x00007FF65F285A55]
+	GetHandleVerifier [0x00007FF65F7ED6FD+3223453]
+	GetHandleVerifier [0x00007FF65F7E7CA2+3200322]
+	GetHandleVerifier [0x00007FF65F805AD3+3322739]
+	GetHandleVerifier [0x00007FF65F5069FA+180890]
+	GetHandleVerifier [0x00007FF65F50E0FF+211359]
+	(No symbol) [0x00007FF65F284AC8]
+	GetHandleVerifier [0x00007FF65F8D6FA8+4180040]
+	BaseThreadInitThunk [0x00007FFB5BE8E8D7+23]
+	RtlUserThreadStart [0x00007FFB5D6FC5DC+44]
+</msg>
+<msg time="2025-05-26T14:27:16.402136" level="FAIL">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x00007FF65F4ECF25+75717]
+	GetHandleVerifier [0x00007FF65F4ECF80+75808]
+	(No symbol) [0x00007FF65F2B8F9A]
+	(No symbol) [0x00007FF65F2A4E35]
+	(No symbol) [0x00007FF65F2C9DB4]
+	(No symbol) [0x00007FF65F33EE75]
+	(No symbol) [0x00007FF65F35ECC2]
+	(No symbol) [0x00007FF65F337153]
+	(No symbol) [0x00007FF65F300421]
+	(No symbol) [0x00007FF65F3011B3]
+	GetHandleVerifier [0x00007FF65F7ED6FD+3223453]
+	GetHandleVerifier [0x00007FF65F7E7CA2+3200322]
+	GetHandleVerifier [0x00007FF65F805AD3+3322739]
+	GetHandleVerifier [0x00007FF65F5069FA+180890]
+	GetHandleVerifier [0x00007FF65F50E0FF+211359]
+	GetHandleVerifier [0x00007FF65F4F5274+109332]
+	GetHandleVerifier [0x00007FF65F4F5422+109762]
+	GetHandleVerifier [0x00007FF65F4DBA39+4825]
+	BaseThreadInitThunk [0x00007FFB5BE8E8D7+23]
+	RtlUserThreadStart [0x00007FFB5D6FC5DC+44]
+</msg>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-05-26T14:27:13.436108" elapsed="3.005586">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x00007FF65F4ECF25+75717]
+	GetHandleVerifier [0x00007FF65F4ECF80+75808]
+	(No symbol) [0x00007FF65F2B8F9A]
+	(No symbol) [0x00007FF65F2A4E35]
+	(No symbol) [0x00007FF65F2C9DB4]
+	(No symbol) [0x00007FF65F33EE75]
+	(No symbol) [0x00007FF65F35ECC2]
+	(No symbol) [0x00007FF65F337153]
+	(No symbol) [0x00007FF65F300421]
+	(No symbol) [0x00007FF65F3011B3]
+	GetHandleVerifier [0x00007FF65F7ED6FD+3223453]
+	GetHandleVerifier [0x00007FF65F7E7CA2+3200322]
+	GetHandleVerifier [0x00007FF65F805AD3+3322739]
+	GetHandleVerifier [0x00007FF65F5069FA+180890]
+	GetHandleVerifier [0x00007FF65F50E0FF+211359]
+	GetHandleVerifier [0x00007FF65F4F5274+109332]
+	GetHandleVerifier [0x00007FF65F4F5422+109762]
+	GetHandleVerifier [0x00007FF65F4DBA39+4825]
+	BaseThreadInitThunk [0x00007FFB5BE8E8D7+23]
+	RtlUserThreadStart [0x00007FFB5D6FC5DC+44]
+</status>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2025-05-26T14:27:16.441862" elapsed="0.000025"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="FAIL" start="2025-05-26T14:27:13.435957" elapsed="3.006017">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x00007FF65F4ECF25+75717]
+	GetHandleVerifier [0x00007FF65F4ECF80+75808]
+	(No symbol) [0x00007FF65F2B8F9A]
+	(No symbol) [0x00007FF65F2A4E35]
+	(No symbol) [0x00007FF65F2C9DB4]
+	(No symbol) [0x00007FF65F33EE75]
+	(No symbol) [0x00007FF65F35ECC2]
+	(No symbol) [0x00007FF65F337153]
+	(No symbol) [0x00007FF65F300421]
+	(No symbol) [0x00007FF65F3011B3]
+	GetHandleVerifier [0x00007FF65F7ED6FD+3223453]
+	GetHandleVerifier [0x00007FF65F7E7CA2+3200322]
+	GetHandleVerifier [0x00007FF65F805AD3+3322739]
+	GetHandleVerifier [0x00007FF65F5069FA+180890]
+	GetHandleVerifier [0x00007FF65F50E0FF+211359]
+	GetHandleVerifier [0x00007FF65F4F5274+109332]
+	GetHandleVerifier [0x00007FF65F4F5422+109762]
+	GetHandleVerifier [0x00007FF65F4DBA39+4825]
+	BaseThreadInitThunk [0x00007FFB5BE8E8D7+23]
+	RtlUserThreadStart [0x00007FFB5D6FC5DC+44]
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-26T14:27:16.442048" elapsed="0.000017"/>
+</kw>
+<arg>${LOGIN_EMAIL_FIELD}</arg>
+<arg>${email}</arg>
+<status status="FAIL" start="2025-05-26T14:27:13.435770" elapsed="3.006367">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x00007FF65F4ECF25+75717]
+	GetHandleVerifier [0x00007FF65F4ECF80+75808]
+	(No symbol) [0x00007FF65F2B8F9A]
+	(No symbol) [0x00007FF65F2A4E35]
+	(No symbol) [0x00007FF65F2C9DB4]
+	(No symbol) [0x00007FF65F33EE75]
+	(No symbol) [0x00007FF65F35ECC2]
+	(No symbol) [0x00007FF65F337153]
+	(No symbol) [0x00007FF65F300421]
+	(No symbol) [0x00007FF65F3011B3]
+	GetHandleVerifier [0x00007FF65F7ED6FD+3223453]
+	GetHandleVerifier [0x00007FF65F7E7CA2+3200322]
+	GetHandleVerifier [0x00007FF65F805AD3+3322739]
+	GetHandleVerifier [0x00007FF65F5069FA+180890]
+	GetHandleVerifier [0x00007FF65F50E0FF+211359]
+	GetHandleVerifier [0x00007FF65F4F5274+109332]
+	GetHandleVerifier [0x00007FF65F4F5422+109762]
+	GetHandleVerifier [0x00007FF65F4DBA39+4825]
+	BaseThreadInitThunk [0x00007FFB5BE8E8D7+23]
+	RtlUserThreadStart [0x00007FFB5D6FC5DC+44]
+</status>
+</kw>
+<kw name="Input Text When Ready" owner="base_page">
+<arg>${LOGIN_PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2025-05-26T14:27:16.442244" elapsed="0.000024"/>
+</kw>
+<kw name="Click Element When Ready" owner="base_page">
+<arg>${LOGIN_BUTTON}</arg>
+<status status="NOT RUN" start="2025-05-26T14:27:16.442349" elapsed="0.000016"/>
+</kw>
+<arg>${DEFAULT_EMAIL}</arg>
+<arg>${DEFAULT_PASSWORD}</arg>
+<status status="FAIL" start="2025-05-26T14:27:13.435495" elapsed="3.006929">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x00007FF65F4ECF25+75717]
+	GetHandleVerifier [0x00007FF65F4ECF80+75808]
+	(No symbol) [0x00007FF65F2B8F9A]
+	(No symbol) [0x00007FF65F2A4E35]
+	(No symbol) [0x00007FF65F2C9DB4]
+	(No symbol) [0x00007FF65F33EE75]
+	(No symbol) [0x00007FF65F35ECC2]
+	(No symbol) [0x00007FF65F337153]
+	(No symbol) [0x00007FF65F300421]
+	(No symbol) [0x00007FF65F3011B3]
+	GetHandleVerifier [0x00007FF65F7ED6FD+3223453]
+	GetHandleVerifier [0x00007FF65F7E7CA2+3200322]
+	GetHandleVerifier [0x00007FF65F805AD3+3322739]
+	GetHandleVerifier [0x00007FF65F5069FA+180890]
+	GetHandleVerifier [0x00007FF65F50E0FF+211359]
+	GetHandleVerifier [0x00007FF65F4F5274+109332]
+	GetHandleVerifier [0x00007FF65F4F5422+109762]
+	GetHandleVerifier [0x00007FF65F4DBA39+4825]
+	BaseThreadInitThunk [0x00007FFB5BE8E8D7+23]
+	RtlUserThreadStart [0x00007FFB5D6FC5DC+44]
+</status>
+</kw>
+<kw name="Add Product To Basket" owner="product_page">
+<arg>1</arg>
+<status status="NOT RUN" start="2025-05-26T14:27:16.442736" elapsed="0.000028"/>
+</kw>
+<kw name="Go To Basket" owner="product_page">
+<status status="NOT RUN" start="2025-05-26T14:27:16.442932" elapsed="0.000020"/>
+</kw>
+<kw name="Verify Items In Basket" owner="basket_page">
+<arg>1</arg>
+<status status="NOT RUN" start="2025-05-26T14:27:16.443129" elapsed="0.000016"/>
+</kw>
+<kw name="Proceed To Checkout" owner="basket_page">
+<status status="NOT RUN" start="2025-05-26T14:27:16.443287" elapsed="0.000015"/>
+</kw>
+<kw name="Add New Address" owner="checkout_page">
+<status status="NOT RUN" start="2025-05-26T14:27:16.443434" elapsed="0.000021"/>
+</kw>
+<kw name="Fill Address Form" owner="address_page">
+<arg>${TEST_COUNTRY}</arg>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_MOBILE}</arg>
+<arg>${TEST_ZIP}</arg>
+<arg>${TEST_ADDRESS}</arg>
+<arg>${TEST_CITY}</arg>
+<arg>${TEST_STATE}</arg>
+<status status="NOT RUN" start="2025-05-26T14:27:16.443574" elapsed="0.000017"/>
+</kw>
+<kw name="Submit Address Form" owner="address_page">
+<status status="NOT RUN" start="2025-05-26T14:27:16.443706" elapsed="0.000018"/>
+</kw>
+<kw name="Element Should Be Visible And Enabled" owner="base_page">
+<arg>${CONTINUE_BUTTON}</arg>
+<status status="NOT RUN" start="2025-05-26T14:27:16.443831" elapsed="0.000043"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-05-26T14:27:16.444386" elapsed="2.029119"/>
+</kw>
+<doc>Tests the flow of logging in, adding 1 item to basket, and completing checkout with a new address</doc>
+<status status="FAIL" start="2025-05-26T14:27:07.857296" elapsed="10.616421">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=137.0.7151.41)
+Stacktrace:
+	GetHandleVerifier [0x00007FF65F4ECF25+75717]
+	GetHandleVerifier [0x00007FF65F4ECF80+75808]
+	(No symbol) [0x00007FF65F2B8F9A]
+	(No symbol) [0x00007FF65F2A4E35]
+	(No symbol) [0x00007FF65F2C9DB4]
+	(No symbol) [0x00007FF65F33EE75]
+	(No symbol) [0x00007FF65F35ECC2]
+	(No symbol) [0x00007FF65F337153]
+	(No symbol) [0x00007FF65F300421]
+	(No symbol) [0x00007FF65F3011B3]
+	GetHandleVerifier [0x00007FF65F7ED6FD+3223453]
+	GetHandleVerifier [0x00007FF65F7E7CA2+3200322]
+	GetHandleVerifier [0x00007FF65F805AD3+3322739]
+	GetHandleVerifier [0x00007FF65F5069FA+180890]
+	GetHandleVerifier [0x00007FF65F50E0FF+211359]
+	GetHandleVerifier [0x00007FF65F4F5274+109332]
+	GetHandleVerifier [0x00007FF65F4F5422+109762]
+	GetHandleVerifier [0x00007FF65F4DBA39+4825]
+	BaseThreadInitThunk [0x00007FFB5BE8E8D7+23]
+	RtlUserThreadStart [0x00007FFB5D6FC5DC+44]
+</status>
+</test>
+<doc>Test scenario 1: Login, add 1 item to basket, checkout, add address</doc>
+<status status="FAIL" start="2025-05-26T14:27:07.646905" elapsed="10.827805"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Scenario1 Test" id="s1" pass="0" fail="1" skip="0">Scenario1 Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-26T14:27:08.002684" level="WARN">The chromedriver version (136.0.7103.92) detected in PATH at C:\Program Files\Python313\chromedriver.exe might not be compatible with the detected chrome version (137.0.7151.41); currently, chromedriver 137.0.7151.40 is recommended for chrome 137.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-26T14:27:16.401192" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x00007FF65F4ECF25+75717]
+	GetHandleVerifier [0x00007FF65F4ECF80+75808]
+	(No symbol) [0x00007FF65F2B8DCC]
+	(No symbol) [0x00007FF65F2FF54F]
+	(No symbol) [0x00007FF65F337242]
+	(No symbol) [0x00007FF65F331C63]
+	(No symbol) [0x00007FF65F330D29]
+	(No symbol) [0x00007FF65F285A55]
+	GetHandleVerifier [0x00007FF65F7ED6FD+3223453]
+	GetHandleVerifier [0x00007FF65F7E7CA2+3200322]
+	GetHandleVerifier [0x00007FF65F805AD3+3322739]
+	GetHandleVerifier [0x00007FF65F5069FA+180890]
+	GetHandleVerifier [0x00007FF65F50E0FF+211359]
+	(No symbol) [0x00007FF65F284AC8]
+	GetHandleVerifier [0x00007FF65F8D6FA8+4180040]
+	BaseThreadInitThunk [0x00007FFB5BE8E8D7+23]
+	RtlUserThreadStart [0x00007FFB5D6FC5DC+44]
+</msg>
+</errors>
+</robot>

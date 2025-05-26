@@ -1,0 +1,14 @@
+# python
+robotframework
+robotframework-selenium2library
+# robotframework-appiumlibrary
+# robotframework-puppeteerlibrary
+# robotframework-databaselibrary
+# robotframework-requests
+robotframework-datadriver
+# webdrivermanager
+# allure-robotframework
+# robotframework-pabot
+# pymysql
+# mysql-connector
+# mysql-connector-python
