@@ -3,7 +3,9 @@ Library    SeleniumLibrary
 Resource    ${CURDIR}/../variables/config.robot
 
 *** Variables ***
-${BROWSER}    chrome
+${BROWSER}    edge
+#${BROWSER}    headlesschrome
+#${BROWSER}    chrome
 ${TIMEOUT}    10
 
 *** Keywords ***

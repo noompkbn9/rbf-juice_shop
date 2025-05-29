@@ -13,7 +13,11 @@ Load Environment Variables
     # Base URL
     ${BASE_URL}=    Get Environment Variable Or Default    JUICE_SHOP_URL    ${BASE_URL}
     Set Global Variable    ${BASE_URL}
-    
+
+    # Base URL
+    ${LOGIN_URL}=    Get Environment Variable Or Default    JUICE_SHOP_LOGINURL    ${LOGIN_URL}
+    Set Global Variable    ${LOGIN_URL}
+
     # Credentials
     ${DEFAULT_EMAIL}=    Get Environment Variable Or Default    JUICE_SHOP_EMAIL    ${DEFAULT_EMAIL}
     Set Global Variable    ${DEFAULT_EMAIL}

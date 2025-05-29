@@ -6,7 +6,7 @@ Resource          ${CURDIR}/../resources/pages/basket_page.robot
 Resource          ${CURDIR}/../resources/pages/checkout_page.robot
 Resource          ${CURDIR}/../resources/pages/address_page.robot
 Resource          ${CURDIR}/../resources/variables/env_loader.robot
-#Resource          ${CURDIR}/../resources/variables/config.robot
+Resource          ${CURDIR}/../resources/variables/config.robot
 Test Setup        Setup Test
 Test Teardown     Close All Browsers
 

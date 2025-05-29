@@ -5,8 +5,9 @@ Resource    base_page.robot
 # Product page locators
 ${SEARCH_ICON}    css=.mat-search_icon-search
 ${SEARCH_FIELD}    css=#mat-input-0
-${PRODUCT_CARDS}    css=.mat-card
-${ADD_TO_BASKET_BUTTON}    css=.mat-button-wrapper:contains("Add to Basket")
+${PRODUCT_CARDS}    css=.mat-mdc-card
+#${ADD_TO_BASKET_BUTTON}    css=.mat-button-wrapper:contains("Add to Basket")
+${ADD_TO_BASKET_BUTTON}    .basket-btn-container button
 ${BASKET_ITEM_COUNT}    css=.fa-layers-counter
 ${BASKET_BUTTON}    css=.mat-toolbar-row button[aria-label="Show the shopping cart"]
 

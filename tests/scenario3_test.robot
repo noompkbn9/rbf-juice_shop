@@ -3,7 +3,7 @@ Documentation     Test scenario 3: Search for apple, verify results
 Resource          ${CURDIR}/../resources/pages/login_page.robot
 Resource          ${CURDIR}/../resources/pages/product_page.robot
 Resource          ${CURDIR}/../resources/variables/env_loader.robot
-#Resource          ${CURDIR}/../resources/variables/config.robot
+Resource          ${CURDIR}/../resources/variables/config.robot
 Test Setup        Setup Test
 Test Teardown     Close All Browsers
 
