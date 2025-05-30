@@ -18,10 +18,11 @@ User Should Be Able To Login Add One Item And Complete Checkout
     Login With Credentials    ${DEFAULT_EMAIL}    ${DEFAULT_PASSWORD}
     
     # Add 1 item to basket
-    Add Product To Basket    1
+    Add Product To Basket By Index    1
     
     # Go to basket
     Go To Basket
+    Sleep    1s    # Small wait to ensure the basket counter updates
     Verify Items In Basket    1
     
     # Proceed to checkout

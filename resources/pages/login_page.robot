@@ -19,7 +19,7 @@ Navigate To Login Page
     Dismiss Cookie Notice If Present
     Go To    ${LOGIN_URL}
  #   Dismiss Welcome Dialog If Present
- #   Dismiss Cookie Notice If Present
+    Dismiss Cookie Notice If Present
 
 Dismiss Welcome Dialog If Present
     ${status}=    Run Keyword And Return Status    Element Should Be Visible    ${WELCOME_DIALOG_DISMISS_BUTTON}    5s

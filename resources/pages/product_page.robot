@@ -5,9 +5,10 @@ Resource    base_page.robot
 # Product page locators
 ${SEARCH_ICON}    css=.mat-search_icon-search
 ${SEARCH_FIELD}    css=#mat-input-0
-${PRODUCT_CARDS}    css=.mat-mdc-card
-#${ADD_TO_BASKET_BUTTON}    css=.mat-button-wrapper:contains("Add to Basket")
-${ADD_TO_BASKET_BUTTON}    .basket-btn-container button
+${PRODUCT_CARDS}    css=.mat-card
+#${PRODUCT_CARDS}    css=.mat-mdc-card
+${ADD_TO_BASKET_BUTTON}    css=button[aria-label='Add to Basket']
+#${ADD_TO_BASKET_BUTTON}    .basket-btn-container  id:basket-btn-container >> css:button
 ${BASKET_ITEM_COUNT}    css=.fa-layers-counter
 ${BASKET_BUTTON}    css=.mat-toolbar-row button[aria-label="Show the shopping cart"]
 
@@ -21,8 +22,18 @@ Search For Product
 Add Product To Basket
     [Arguments]    ${product_index}=1
     ${product_selector}=    Set Variable    (${PRODUCT_CARDS})[${product_index}]
+    Wait Until Element Is Visible    ${product_selector}
     ${add_button}=    Set Variable    ${product_selector} ${ADD_TO_BASKET_BUTTON}
-    Click Element When Ready    ${add_button}
+    Wait Until Element Is Visible    ${add_button}    timeout=10s
+    Click Element    ${add_button}
+    Sleep    1s    # Small wait to ensure the basket counter updates
+
+Add Product To Basket By Index
+    [Arguments]    ${product_index}=1
+    ${product_xpath}=    Set Variable    (//mat-card)[${product_index}]//button[contains(@aria-label, 'Add to Basket')]
+    Wait Until Element Is Visible    xpath=${product_xpath}    timeout=10s
+    Click Element    xpath=${product_xpath}
+    Sleep    1s    # Small wait to ensure the basket counter updates
 
 Verify Product Search Results
     [Arguments]    ${expected_count}    ${search_term}
