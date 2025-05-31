@@ -19,8 +19,8 @@ User Should Be Able To Login Add Two Items And Complete Checkout
     Login With Credentials    ${DEFAULT_EMAIL}    ${DEFAULT_PASSWORD}
     
     # Add 2 items to basket
-    Add Product To Basket    1
-    Add Product To Basket    2
+    Add Product To Basket By Index    1
+    Add Product To Basket By Index    2
     
     # Go to basket
     Go To Basket
@@ -34,8 +34,13 @@ User Should Be Able To Login Add Two Items And Complete Checkout
     Fill Address Form    ${ADDR_COUNTRY}    ${ADDR_NAME}    ${ADDR_MOBILE}    ${ADDR_ZIP}    ${ADDR_ADDRESS}    ${ADDR_CITY}    ${ADDR_STATE}
     Submit Address Form
     
-    # Verify success
-    Element Should Be Visible And Enabled    ${CONTINUE_BUTTON}
+    # Select Address
+    Select Existing Address
+    Continue To Delivery Options
+
+    # Select Delivery speed
+    Select Delivery Speed
+    Continue To Verify
 
 *** Keywords ***
 Setup Test
