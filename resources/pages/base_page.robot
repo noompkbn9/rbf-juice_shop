@@ -1,5 +1,4 @@
 *** Settings ***
-Library    SeleniumLibrary
 Resource    ${CURDIR}/../variables/config.robot
 
 *** Variables ***
@@ -49,3 +48,24 @@ Element Should Not Contain Text
     [Arguments]    ${locator}    ${unexpected_text}    ${timeout}=${TIMEOUT}
     Wait Until Element Is Visible    ${locator}    ${timeout}
     Element Should Not Contain    ${locator}    ${unexpected_text}
+
+Click Random Radio Button
+    [Arguments]    ${locator}
+
+    ${radio_buttons}=     Get WebElements     ${locator}
+    ${count}=             Get Length          ${radio_buttons}
+    Run Keyword If        not ${count} > 0    Fail       ไม่พบ mat-radio-button ในหน้า
+
+    ${random_index}=      Evaluate    random.randint(0, ${count} - 1)    modules=random
+    Log To Console        Clicking... radio index: ${random_index}
+
+    ${By}=                Evaluate    __import__('selenium.webdriver.common.by', fromlist=['By']).By
+
+    ${eval_locals}=       Create Dictionary    radio_buttons=${radio_buttons}    random_index=${random_index}    By=${By}
+
+    ${target_radio}=      Evaluate    
+    ...                   radio_buttons[random_index].find_element(By.XPATH, ".//input[@type='radio']")    
+    ...                   None
+    ...                   ${eval_locals}
+
+    Click Element         ${target_radio}

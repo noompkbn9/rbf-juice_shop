@@ -1,6 +1,3 @@
-*** Settings ***
-Library    OperatingSystem
-
 *** Keywords ***
 Get Environment Variable Or Default
     [Arguments]    ${env_var}    ${default_value}

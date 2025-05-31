@@ -3,7 +3,7 @@ Resource    base_page.robot
 
 *** Variables ***
 # Product page locators
-${SEARCH_ICON}    css=.mat-search_icon-search
+${SEARCH_ICON}    id=searchQuery
 ${SEARCH_FIELD}    css=#mat-input-0
 ${PRODUCT_CARDS}    css=.mat-card
 #${PRODUCT_CARDS}    css=.mat-mdc-card
@@ -57,3 +57,4 @@ Verify Product Not In Results
 
 Go To Basket
     Click Element When Ready    ${BASKET_BUTTON}
+    Sleep    2s    # Small wait

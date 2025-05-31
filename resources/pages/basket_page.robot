@@ -17,3 +17,4 @@ Verify Items In Basket
 
 Proceed To Checkout
     Click Element When Ready    ${CHECKOUT_BUTTON}
+    Sleep    2s    # Small wait    

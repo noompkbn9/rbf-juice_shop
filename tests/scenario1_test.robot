@@ -5,8 +5,9 @@ Resource          ${CURDIR}/../resources/pages/product_page.robot
 Resource          ${CURDIR}/../resources/pages/basket_page.robot
 Resource          ${CURDIR}/../resources/pages/checkout_page.robot
 Resource          ${CURDIR}/../resources/pages/address_page.robot
+Resource          ${CURDIR}/../resources/pages/delivery_page.robot
 Resource          ${CURDIR}/../resources/variables/env_loader.robot
-Resource          ${CURDIR}/../resources/variables/config.robot
+#Resource          ${CURDIR}/../resources/variables/config.robot
 Test Setup        Setup Test
 Test Teardown     Close All Browsers
 
@@ -22,7 +23,6 @@ User Should Be Able To Login Add One Item And Complete Checkout
     
     # Go to basket
     Go To Basket
-    Sleep    1s    # Small wait to ensure the basket counter updates
     Verify Items In Basket    1
     
     # Proceed to checkout
@@ -30,11 +30,16 @@ User Should Be Able To Login Add One Item And Complete Checkout
     
     # Add new address
     Add New Address
-    Fill Address Form    ${TEST_COUNTRY}    ${TEST_NAME}    ${TEST_MOBILE}    ${TEST_ZIP}    ${TEST_ADDRESS}    ${TEST_CITY}    ${TEST_STATE}
+    Fill Address Form    ${ADDR_COUNTRY}    ${ADDR_NAME}    ${ADDR_MOBILE}    ${ADDR_ZIP}    ${ADDR_ADDRESS}    ${ADDR_CITY}    ${ADDR_STATE}
     Submit Address Form
     
-    # Verify success
-    Element Should Be Visible And Enabled    ${CONTINUE_BUTTON}
+    # Select Address
+    Select Existing Address
+    Continue To Delivery Options
+
+    # Select Delivery speed
+    Select Delivery Speed
+    Continue To Verify
 
 *** Keywords ***
 Setup Test

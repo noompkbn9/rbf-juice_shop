@@ -3,18 +3,17 @@ Resource    base_page.robot
 
 *** Variables ***
 # Checkout page locators
-${ADD_NEW_ADDRESS_BUTTON}    css=mat-panel-title:contains("Add a new address")
-${SELECT_ADDRESS_BUTTON}    css=mat-radio-button
-${CONTINUE_BUTTON}    css=button:contains("Continue")
+${ADD_NEW_ADDRESS_BUTTON}           css=button[aria-label="Add a new address"]
+${SELECT_ADDRESS_BUTTON}            css=mat-row.mat-mdc-row mat-radio-button
+${CONTINUE_TO_DELIVERY_BUTTON}      css=button[aria-label="Proceed to payment selection"]
 
 *** Keywords ***
 Add New Address
     Click Element When Ready    ${ADD_NEW_ADDRESS_BUTTON}
 
 Select Existing Address
-    [Arguments]    ${address_index}=1
-    ${address_selector}=    Set Variable    (${SELECT_ADDRESS_BUTTON})[${address_index}]
-    Click Element When Ready    ${address_selector}
+    Wait Until Element Is Visible And Enabled       ${SELECT_ADDRESS_BUTTON}
+    Click Random Radio Button                       ${SELECT_ADDRESS_BUTTON}
 
-Continue To Next Step
-    Click Element When Ready    ${CONTINUE_BUTTON}
+Continue To Delivery Options
+    Click Element When Ready                        ${CONTINUE_TO_DELIVERY_BUTTON}
