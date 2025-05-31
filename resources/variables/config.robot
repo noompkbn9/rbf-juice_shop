@@ -17,6 +17,9 @@ ${BROWSER}              edge
 #${BROWSER}              headlesschrome
 ${TIMEOUT}              10
 
+${DISMISS_COOKIE_NOTICE}    class=cc-dismiss
+${WELCOME_DIALOG_DISMISS_BUTTON}    css=button[aria-label='Close Welcome Banner']
+
 # Test data
 ${ADDR_COUNTRY}     Thailand
 ${ADDR_NAME}        Pongsak Bo

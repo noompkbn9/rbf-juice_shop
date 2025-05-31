@@ -49,6 +49,14 @@ Element Should Not Contain Text
     Wait Until Element Is Visible    ${locator}    ${timeout}
     Element Should Not Contain    ${locator}    ${unexpected_text}
 
+Dismiss Welcome Dialog If Present
+    ${status}=    Run Keyword And Return Status    Element Should Be Visible    ${WELCOME_DIALOG_DISMISS_BUTTON}    5s
+    Run Keyword If    ${status}    Click Element    ${WELCOME_DIALOG_DISMISS_BUTTON}
+
+Dismiss Cookie Notice If Present
+    ${status}=    Run Keyword And Return Status    Element Should Be Visible    ${DISMISS_COOKIE_NOTICE}    5s
+    Run Keyword If    ${status}    Click Element    ${DISMISS_COOKIE_NOTICE}
+
 Click Random Radio Button
     [Arguments]    ${locator}
 

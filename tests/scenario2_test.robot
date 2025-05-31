@@ -19,12 +19,13 @@ User Should Be Able To Login Add Two Items And Complete Checkout
     Login With Credentials    ${DEFAULT_EMAIL}    ${DEFAULT_PASSWORD}
     
     # Add 2 items to basket
+    ${item_before_add}=    Check Current Items In Basket
     Add Product To Basket By Index    1
     Add Product To Basket By Index    2
     
     # Go to basket
     Go To Basket
-    Verify Items In Basket    2
+    Verify Items In Basket    2    ${item_before_add}
     
     # Proceed to checkout
     Proceed To Checkout

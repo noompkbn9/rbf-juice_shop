@@ -2,8 +2,12 @@
 Documentation     Test scenario 3: Search for apple, verify results
 Resource          ${CURDIR}/../resources/pages/login_page.robot
 Resource          ${CURDIR}/../resources/pages/product_page.robot
+Resource          ${CURDIR}/../resources/pages/basket_page.robot
+Resource          ${CURDIR}/../resources/pages/checkout_page.robot
+Resource          ${CURDIR}/../resources/pages/address_page.robot
+Resource          ${CURDIR}/../resources/pages/delivery_page.robot
 Resource          ${CURDIR}/../resources/variables/env_loader.robot
-Resource          ${CURDIR}/../resources/variables/config.robot
+#Resource          ${CURDIR}/../resources/variables/config.robot
 Test Setup        Setup Test
 Test Teardown     Close All Browsers
 
@@ -25,4 +29,6 @@ User Should Be Able To Search For Products And Verify Results
 *** Keywords ***
 Setup Test
     Load Environment Variables
-    Navigate To Login Page
+    Open Browser To Page
+    Dismiss Welcome Dialog If Present
+    Dismiss Cookie Notice If Present

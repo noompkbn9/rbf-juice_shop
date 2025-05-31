@@ -17,13 +17,14 @@ User Should Be Able To Login Add One Item And Complete Checkout
     
     # Login
     Login With Credentials    ${DEFAULT_EMAIL}    ${DEFAULT_PASSWORD}
-    
+
     # Add 1 item to basket
+    ${item_before_add}=    Check Current Items In Basket
     Add Product To Basket By Index    1
     
     # Go to basket
     Go To Basket
-    Verify Items In Basket    1
+    Verify Items In Basket    1    ${item_before_add}
     
     # Proceed to checkout
     Proceed To Checkout
