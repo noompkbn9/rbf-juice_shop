@@ -1,5 +1,6 @@
 *** Keywords ***
 Get Environment Variable Or Default
+    Comment        Get Environment Variable Or Default
     [Arguments]    ${env_var}    ${default_value}
     ${value}=    Run Keyword And Return Status    Environment Variable Should Be Set    ${env_var}
     ${result}=    Run Keyword If    ${value}    Get Environment Variable    ${env_var}
@@ -7,6 +8,7 @@ Get Environment Variable Or Default
     RETURN    ${result}
 
 Load Environment Variables
+    Comment        Load Environment Variables
     # Base URL
     ${BASE_URL}=    Get Environment Variable Or Default    JUICE_SHOP_URL    ${BASE_URL}
     Set Global Variable    ${BASE_URL}

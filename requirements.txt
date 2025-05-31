@@ -1,11 +1,11 @@
 # python
 robotframework
-robotframework-selenium2library
+robotframework-seleniumlibrary
 # robotframework-appiumlibrary
 # robotframework-puppeteerlibrary
 # robotframework-databaselibrary
 # robotframework-requests
-robotframework-datadriver
+# robotframework-datadriver
 # webdrivermanager
 # allure-robotframework
 # robotframework-pabot

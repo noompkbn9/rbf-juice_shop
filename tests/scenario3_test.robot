@@ -28,6 +28,7 @@ User Should Be Able To Search For Products And Verify Results
 
 *** Keywords ***
 Setup Test
+    Comment    Setup Test
     Load Environment Variables
     Open Browser To Page
     Dismiss Welcome Dialog If Present

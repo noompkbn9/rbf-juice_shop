@@ -14,6 +14,7 @@ ${SUBMIT_BUTTON}     id=submitButton
 
 *** Keywords ***
 Fill Address Form
+    Comment    Fill address form
     [Arguments]    ${country}    ${name}    ${mobile}    ${zip}    ${address}    ${city}    ${state}
     Input Text When Ready    ${COUNTRY_FIELD}       ${country}
     Input Text When Ready    ${NAME_FIELD}          ${name}
@@ -24,6 +25,7 @@ Fill Address Form
     Input Text When Ready    ${STATE_FIELD}         ${state}
     
 Submit Address Form
+    Comment    Submit address form
     Sleep    1s
     Click Element When Ready    ${SUBMIT_BUTTON}
     Sleep    2s

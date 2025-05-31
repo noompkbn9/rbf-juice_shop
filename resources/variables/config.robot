@@ -5,15 +5,14 @@ Library     String
 Library     SeleniumLibrary
 Library     random
 
-
 *** Variables ***
 # Default configuration values
 ${BASE_URL}             https://juice-shop.herokuapp.com
 ${LOGIN_URL}            ${BASE_URL}/#/login
 ${DEFAULT_EMAIL}        noom_pkbn@hotmail.com
 ${DEFAULT_PASSWORD}     Test123!
-#${BROWSER}              chrome
-${BROWSER}              edge
+${BROWSER}              chrome
+#${BROWSER}              edge
 #${BROWSER}              headlesschrome
 ${TIMEOUT}              10
 

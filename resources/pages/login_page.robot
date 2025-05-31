@@ -9,6 +9,7 @@ ${LOGIN_BUTTON}    id=loginButton
 
 *** Keywords ***
 Navigate To Login Page
+    Comment    Navigate to login page
     Open Browser To Page
     Dismiss Welcome Dialog If Present
     Dismiss Cookie Notice If Present
@@ -17,6 +18,7 @@ Navigate To Login Page
     Dismiss Cookie Notice If Present
 
 Login With Credentials
+    Comment    Login with credentials
     [Arguments]    ${email}    ${password}
     Dismiss Welcome Dialog If Present   
     Input Text When Ready    ${LOGIN_EMAIL_FIELD}    ${email}

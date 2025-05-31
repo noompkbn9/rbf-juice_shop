@@ -8,8 +8,10 @@ ${CONTINUE_TO_VERIFY_BUTTON}     css=button[aria-label="Proceed to delivery meth
 
 *** Keywords ***
 Select Delivery Speed
+    Comment        Select Delivery Speed
     Wait Until Element Is Visible And Enabled       ${SELECT_DELIVERY_SPEED}
     Click Random Radio Button                       ${SELECT_DELIVERY_SPEED}
 
 Continue To Verify
+    Comment        Continue To Verify
     Click Element When Ready                        ${CONTINUE_TO_VERIFY_BUTTON}

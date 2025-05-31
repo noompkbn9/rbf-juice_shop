@@ -9,11 +9,14 @@ ${CONTINUE_TO_DELIVERY_BUTTON}      css=button[aria-label="Proceed to payment se
 
 *** Keywords ***
 Add New Address
+    Comment        Add New Address
     Click Element When Ready    ${ADD_NEW_ADDRESS_BUTTON}
 
 Select Existing Address
+    Comment        Select Existing Address
     Wait Until Element Is Visible And Enabled       ${SELECT_ADDRESS_BUTTON}
     Click Random Radio Button                       ${SELECT_ADDRESS_BUTTON}
 
 Continue To Delivery Options
+    Comment        Continue To Delivery Options
     Click Element When Ready                        ${CONTINUE_TO_DELIVERY_BUTTON}

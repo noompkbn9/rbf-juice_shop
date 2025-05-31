@@ -9,12 +9,14 @@ ${ITEM_QUANTITY}       css=mat-cell.mat-column-quantity
 
 *** Keywords ***
 Check Current Items In Basket
+    Comment        Check Current Items In Basket
     Wait Until Element Is Visible And Enabled    ${BASKET_ITEMS}
     Sleep    2s    # Small wait
     ${current_count}=    Get Text    ${BASKET_ITEMS}
     RETURN    ${current_count}
 
 Verify Items In Basket
+    Comment        Verify Items In Basket
     [Arguments]    ${item_count}    ${item_before_add_count}
 
     ${expected_count}=     Evaluate    ${item_count} + ${item_before_add_count}

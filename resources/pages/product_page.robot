@@ -6,20 +6,20 @@ Resource    base_page.robot
 ${SEARCH_ICON}    id=searchQuery
 ${SEARCH_FIELD}    css=#searchQuery input[type="text"]
 ${PRODUCT_CARDS}    css=app-search-result.ng-star-inserted div.mat-grid-tile-content
-#${PRODUCT_CARDS}    css=.mat-mdc-card
 ${ADD_TO_BASKET_BUTTON}    css=button[aria-label='Add to Basket']
-#${ADD_TO_BASKET_BUTTON}    .basket-btn-container  id:basket-btn-container >> css:button
 ${BASKET_ITEM_COUNT}    css=.fa-layers-counter
 ${BASKET_BUTTON}    css=.mat-toolbar-row button[aria-label="Show the shopping cart"]
 
 *** Keywords ***
 Search For Product
+    Comment    Search for product
     [Arguments]    ${search_term}
     Click Element When Ready    ${SEARCH_ICON}
     Input Text When Ready    ${SEARCH_FIELD}    ${search_term}
     Press Keys    ${SEARCH_FIELD}    RETURN
 
 Add Product To Basket
+    Comment    Add product to basket
     [Arguments]    ${product_index}=1
     ${product_selector}=    Set Variable    (${PRODUCT_CARDS})[${product_index}]
     Wait Until Element Is Visible    ${product_selector}
@@ -29,6 +29,7 @@ Add Product To Basket
     Sleep    1s    # Small wait to ensure the basket counter updates
 
 Add Product To Basket By Index
+    Comment    Add product to basket by index
     [Arguments]    ${product_index}=1
     ${product_xpath}=    Set Variable    (//mat-card)[${product_index}]//button[contains(@aria-label, 'Add to Basket')]
     Wait Until Element Is Visible    xpath=${product_xpath}    timeout=10s
@@ -36,6 +37,7 @@ Add Product To Basket By Index
     Sleep    1s    # Small wait to ensure the basket counter updates
 
 Verify Product Search Results
+    Comment    Verify product search results
     [Arguments]    ${expected_count}    ${search_term}
     
     Wait Until Keyword Succeeds    5x    2s    Wait Until Product Cards Exist
@@ -51,9 +53,11 @@ Verify Product Search Results
     END
 
 Wait Until Product Cards Exist
+    Comment    Wait until product cards exist
     Wait Until Page Contains Element    ${PRODUCT_CARDS}    ${TIMEOUT}
 
 Verify Product Not In Results
+    Comment    Verify product not in results
     [Arguments]    ${unexpected_term}
     ${products}=    Get WebElements    ${PRODUCT_CARDS}
     
@@ -63,5 +67,6 @@ Verify Product Not In Results
     END
 
 Go To Basket
+    Comment    Go to basket
     Click Element When Ready    ${BASKET_BUTTON}
     Sleep    2s    # Small wait

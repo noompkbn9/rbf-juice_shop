@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Test scenario 1: Login, add 1 item to basket, checkout, add address
+Documentation     Test scenario 1: Login, add 1 item to basket, checkout, add address, select delivery speed
 Resource          ${CURDIR}/../resources/pages/login_page.robot
 Resource          ${CURDIR}/../resources/pages/product_page.robot
 Resource          ${CURDIR}/../resources/pages/basket_page.robot
@@ -44,5 +44,6 @@ User Should Be Able To Login Add One Item And Complete Checkout
 
 *** Keywords ***
 Setup Test
+    Comment    Setup Test
     Load Environment Variables
     Navigate To Login Page
