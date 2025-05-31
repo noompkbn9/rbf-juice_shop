@@ -2,7 +2,7 @@
 Library     OperatingSystem
 Library     Collections
 Library     String
-Library     Selenium2Library
+Library     SeleniumLibrary
 Library     random
 
 

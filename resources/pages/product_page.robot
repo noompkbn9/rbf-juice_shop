@@ -4,8 +4,8 @@ Resource    base_page.robot
 *** Variables ***
 # Product page locators
 ${SEARCH_ICON}    id=searchQuery
-${SEARCH_FIELD}    css=#mat-input-0
-${PRODUCT_CARDS}    css=.mat-card
+${SEARCH_FIELD}    css=#searchQuery input[type="text"]
+${PRODUCT_CARDS}    css=app-search-result.ng-star-inserted div.mat-grid-tile-content
 #${PRODUCT_CARDS}    css=.mat-mdc-card
 ${ADD_TO_BASKET_BUTTON}    css=button[aria-label='Add to Basket']
 #${ADD_TO_BASKET_BUTTON}    .basket-btn-container  id:basket-btn-container >> css:button
@@ -37,14 +37,21 @@ Add Product To Basket By Index
 
 Verify Product Search Results
     [Arguments]    ${expected_count}    ${search_term}
+    
+    Wait Until Keyword Succeeds    5x    2s    Wait Until Product Cards Exist
     ${products}=    Get WebElements    ${PRODUCT_CARDS}
     ${actual_count}=    Get Length    ${products}
-    Should Be Equal As Integers    ${actual_count}    ${expected_count}
     
+    ${expected_count}=    Convert To Integer    ${expected_count}
+    Should Be Equal As Integers    ${actual_count}    ${expected_count}
+
     FOR    ${product}    IN    @{products}
         ${product_text}=    Get Text    ${product}
         Should Contain    ${product_text}    ${search_term}    ignore_case=True
     END
+
+Wait Until Product Cards Exist
+    Wait Until Page Contains Element    ${PRODUCT_CARDS}    ${TIMEOUT}
 
 Verify Product Not In Results
     [Arguments]    ${unexpected_term}
